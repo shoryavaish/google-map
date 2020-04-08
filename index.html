@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<title>Google Map Marker</title>
+<body class="light">
+    <header class="header-container">
+        <span class="hamburger" id="hamburger" onclick="toggleList()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
+        <ul class="dropdown" id="dropdown" onclick="toggleList()">
+            <li>
+                <i class="fa fa-video-camera icon"></i>
+                <span>Preview</span>
+            </li>
+            <li>
+                <i class="fa fa-arrows icon"></i>
+                <span>Resize</span>
+            </li>
+            <li>
+                <i class="fa fa-address-card icon"></i>
+                <span>Addresses</span>
+            </li>
+            <li>
+                <i class="fa fa-user-circle icon"></i>
+                <span>Profile</span>
+            </li>
+            <li>
+                <i class="fa fa-expand icon"></i>
+                <span>Expand</span>
+            </li>
+        </ul>
+    </header>
+    
+    <section class="map-container">
+        <div id="map"></div>
+    </section>
+
+    <section class="region-container">
+        <div class="box">
+            <p class="box-title">Region-1</p>
+            <div class="list">
+                <div>#</div>
+                <div>Name</div>
+                <div>Lat, Lng</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-1" onclick="drop(1, 0, this)"></div>
+                <div>Location 1</div>
+                <div>52.511, 13.447</div>
+                <div>Some Information</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-2" onclick="drop(1, 1, this)"></div>
+                <div>Location 2</div>
+                <div>52.549, 13.422</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-3" onclick="drop(1, 2, this)"></div>
+                <div>Location 3</div>
+                <div>52.497, 13.396</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-4" onclick="drop(1, 3, this)"></div>
+                <div>Location 4</div>
+                <div>52.517, 13.394</div>
+                <div>Value</div>
+            </div>
+        </div>
+        <div class="box">
+            <p class="box-title">Region-2</p>
+            <div class="list">
+                <div>#</div>
+                <div>Name</div>
+                <div>Lat, Lng</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-1" onclick="drop(2, 0, this)"></div>
+                <div>Location 1</div>
+                <div>52.521, 13.447</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-2" onclick="drop(2, 1, this)"></div>
+                <div>Location 2</div>
+                <div>52.499, 13.422</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-3" onclick="drop(2, 2, this)"></div>
+                <div>Location 3</div>
+                <div>52.550, 13.396</div>
+                <div>Value</div>
+            </div>
+            <div class="list">
+                <div><input type="checkbox" name="marker" id="marker-4" onclick="drop(2, 3, this)"></div>
+                <div>Location 4</div>
+                <div>52.490, 13.394</div>
+                <div>Value</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="theme-container">
+        <sapn class="theme-title">Select Theme - </sapn>
+        <select name="theme" id="theme" onchange="toggleTheme()">
+            <option value="light" selected>Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAczHpUD82JKJuPZk3tb6Y32NKvhLkq8Y&callback=initMap">
+</script>
+</body>
+</html>
