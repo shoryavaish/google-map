@@ -12,6 +12,9 @@ function toggleTheme(){
     document.body.classList.add(theme)
 }
 
+var imageBaseUrl = 'http://maps.google.com/mapfiles/kml/paddle/';
+var icons = ['orange-blank.png', 'blu-blank.png'];
+
 var neighborhoods = {
     1: [
         {name: 'Location 1', lat: 52.511, lng: 13.447},
@@ -49,11 +52,15 @@ function drop(region, marker, ev) {
 }
 
 function addMarkerWithTimeout(position, region) {
-        markers.push(new google.maps.Marker({
+    markers.push(new google.maps.Marker({
         position: {lat:position.lat, lng: position.lng},
         map: map,
         animation: google.maps.Animation.DROP,
         label: region.toString(),
+        icon: {
+            url: imageBaseUrl + icons[region-1],
+            scaledSize: new google.maps.Size(64, 64)
+        },
         title: position.name
     }));
 }
